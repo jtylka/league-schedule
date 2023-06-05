@@ -3,7 +3,7 @@
 
 import random
 
-teams_list = ["Siemens","Abbott","Munich RE","ThermoFisher","Croda"]
+teams_list = ["Siemens A","Siemens B","Abbott A","Abbott B","Munich RE","PMV Pharma","Croda"]
 
 def _gen_game_list(teams_list):
     game_list = []
