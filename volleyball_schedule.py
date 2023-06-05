@@ -3,7 +3,7 @@
 
 import random
 
-teams_list = ["Siemens A","Siemens B","Abbott A","Abbott B","Munich RE","PMV Pharma","Croda"]
+teams_list = ["Siemens A","Siemens B","Abbott A","Abbott B","Munich RE","PMV Pharma","Croda","GFDL"]
 
 def _gen_game_list(teams_list):
     game_list = []
@@ -17,7 +17,7 @@ def _gen_game_list(teams_list):
 
 def _make_pairs(game_list,teams_list):
     game_pairs = []
-    max_skips = len(teams_list) - 4 # two games per day, no doubles, so 4 teams play each day
+    max_skips = 20 # len(teams_list) - 4 # two games per day, no doubles, so 4 teams play each day
     skip_counter = dict.fromkeys(teams_list, 0)
     ii = 1
     jj = 0
@@ -67,4 +67,6 @@ if __name__ == "__main__":
     random.shuffle(game_list)
     game_pairs = _make_pairs(game_list,teams_list)
     random.shuffle(game_pairs)
+
+    print("\nFinal schedule:",flush=True)
     print(*game_pairs, sep='\n')
